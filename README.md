@@ -34,7 +34,7 @@ ToolKit is a community-driven project, welcoming contributions from anyone with 
 My vision for ToolKit includes the following milestones and upcoming features:
 
 - **Phase 1**: Initial Setup
-  - [ ] Define project structure with shared CSS and category organization.
+  - [x] Define project structure with shared CSS and category organization.
   - [ ] Create initial tools (e.g., RGB Picker, Text Encoder).
   - [ ] Design and implement core site layout and navigation.
 
