@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToolKit - MOTD Creator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="motd-creator.css">
+</head>
+<body class="bg-gray-900 text-gray-200 flex flex-col min-h-screen">
+
+  <header class="bg-gray-800 text-white p-6 flex items-center justify-between">
+    <button onclick="history.back()" class="text-white hover:text-gray-300 transition">
+      <i class="fas fa-arrow-left mr-2"></i> Back
+    </button>
+    <div class="text-center w-full">
+      <h1 class="text-3xl font-bold">ToolKit - MOTD Creator</h1>
+      <p class="mt-2">Create and preview your Minecraft server's Message of the Day</p>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-4xl mx-auto py-10 px-4">
+    <section class="bg-gray-800 p-6 rounded-lg shadow-md">
+      <h2 class="text-xl font-semibold text-blue-400 mb-4">MOTD Editor</h2>
+
+      <!-- Formatting Toolbar -->
+      <div class="flex flex-wrap space-x-2 mb-4">
+        <button onclick="addFormatting('bold')" class="bg-blue-600 text-white py-1 px-3 rounded-md hover:bg-blue-500">Bold</button>
+        <button onclick="addFormatting('italic')" class="bg-blue-600 text-white py-1 px-3 rounded-md hover:bg-blue-500">Italic</button>
+        <button onclick="addFormatting('underline')" class="bg-blue-600 text-white py-1 px-3 rounded-md hover:bg-blue-500">Underline</button>
+        <button onclick="addFormatting('strikethrough')" class="bg-blue-600 text-white py-1 px-3 rounded-md hover:bg-blue-500">Strikethrough</button>
+        <button onclick="addFormatting('reset')" class="bg-blue-600 text-white py-1 px-3 rounded-md hover:bg-blue-500">Reset</button>
+        <input type="color" id="colorPicker" class="w-10 h-10 rounded-full border border-gray-400" onchange="addColor(this.value)">
+      </div>
+
+      <!-- MOTD Input -->
+      <textarea id="motdInput" class="w-full p-4 bg-gray-700 text-gray-100 rounded-md mb-4" rows="4" placeholder="Type your MOTD here..."></textarea>
+
+      <!-- Live Preview -->
+      <div class="bg-gray-700 p-4 rounded-md mb-4">
+        <h3 class="text-lg font-bold text-blue-400 mb-2">Live Preview:</h3>
+        <p id="motdPreview" class="text-gray-100 whitespace-pre-line"></p>
+      </div>
+
+      <!-- Generated Codes -->
+      <div class="bg-gray-700 p-4 rounded-md mb-4">
+        <h3 class="text-lg font-bold text-blue-400 mb-2">Generated Codes:</h3>
+        
+        <p class="text-sm text-gray-400 mb-2">For Vanilla server.properties:</p>
+        <textarea id="vanillaCode" class="w-full p-2 bg-gray-900 text-gray-200 rounded-md mb-4" rows="3" readonly></textarea>
+
+        <p class="text-sm text-gray-400 mb-2">For Spigot server.properties:</p>
+        <textarea id="spigotCode" class="w-full p-2 bg-gray-900 text-gray-200 rounded-md mb-4" rows="3" readonly></textarea>
+
+        <p class="text-sm text-gray-400 mb-2">For BungeeCord config.yml:</p>
+        <textarea id="bungeeCode" class="w-full p-2 bg-gray-900 text-gray-200 rounded-md mb-4" rows="3" readonly></textarea>
+
+        <p class="text-sm text-gray-400 mb-2">For ServerListPlus ServerListPlus.yml:</p>
+        <textarea id="serverListPlusCode" class="w-full p-2 bg-gray-900 text-gray-200 rounded-md" rows="3" readonly></textarea>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white py-4 text-center mt-auto">
+    <p>Created by the community | <a href="https://pandadevv.dev" class="underline">pandadevv.dev</a></p>
+  </footer>
+
+  <script src="motd-creator.js"></script>
+</body>
+</html>

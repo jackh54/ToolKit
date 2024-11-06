@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToolKit - RGB Picker</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-900 text-gray-200 flex flex-col min-h-screen">
+
+  <header class="bg-gray-800 text-white p-6 flex items-center justify-between">
+    <button onclick="history.back()" class="text-white hover:text-gray-300 transition">
+      <i class="fa-solid fa-arrow-left mr-2"></i> Back
+    </button>
+    <div class="text-center w-full">
+      <h1 class="text-3xl font-bold">ToolKit - RGB Picker</h1>
+      <p class="mt-2">Select and adjust RGB colors</p>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-4xl mx-auto py-10 px-4">
+    <section class="bg-gray-800 p-6 rounded-lg shadow-md">
+      <h2 class="text-xl font-semibold text-blue-400 mb-4">Advanced RGB Picker</h2>
+
+      <div class="flex flex-col sm:flex-row justify-between mb-6 space-y-4 sm:space-y-0 sm:space-x-4">
+        <!-- Red Slider and Input -->
+        <div class="flex flex-col items-center w-full">
+          <label for="red" class="text-red-400 font-semibold mb-1">Red</label>
+          <input type="range" id="red" min="0" max="255" value="128" class="w-full bg-gray-700 appearance-none h-2 rounded-lg mb-2" oninput="updateColorFromSliders()">
+          <input type="number" id="redInput" min="0" max="255" value="128" class="w-full bg-gray-700 text-gray-100 text-center rounded-md p-1" oninput="updateColorFromInput()">
+        </div>
+        <!-- Green Slider and Input -->
+        <div class="flex flex-col items-center w-full">
+          <label for="green" class="text-green-400 font-semibold mb-1">Green</label>
+          <input type="range" id="green" min="0" max="255" value="128" class="w-full bg-gray-700 appearance-none h-2 rounded-lg mb-2" oninput="updateColorFromSliders()">
+          <input type="number" id="greenInput" min="0" max="255" value="128" class="w-full bg-gray-700 text-gray-100 text-center rounded-md p-1" oninput="updateColorFromInput()">
+        </div>
+        <!-- Blue Slider and Input -->
+        <div class="flex flex-col items-center w-full">
+          <label for="blue" class="text-blue-400 font-semibold mb-1">Blue</label>
+          <input type="range" id="blue" min="0" max="255" value="128" class="w-full bg-gray-700 appearance-none h-2 rounded-lg mb-2" oninput="updateColorFromSliders()">
+          <input type="number" id="blueInput" min="0" max="255" value="128" class="w-full bg-gray-700 text-gray-100 text-center rounded-md p-1" oninput="updateColorFromInput()">
+        </div>
+      </div>
+
+      <div id="colorDisplay" class="w-full h-40 rounded-lg mb-4 bg-gray-700 flex items-center justify-center text-lg font-bold transition-colors duration-300">
+        RGB(128, 128, 128)
+      </div>
+
+      <div class="flex justify-between">
+        <button onclick="copyToClipboard()" class="bg-blue-600 py-2 px-4 rounded-md hover:bg-blue-500 transition">Copy RGB</button>
+        <button onclick="resetColor()" class="bg-gray-700 py-2 px-4 rounded-md hover:bg-gray-600 transition">Reset</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white py-4 text-center mt-auto">
+    <p>Created by the community | <a href="https://pandadevv.dev" class="underline">pandadevv.dev</a></p>
+  </footer>
+
+  <script src="rgb-picker.js"></script>
+</body>
+</html>

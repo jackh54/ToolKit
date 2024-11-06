@@ -35,21 +35,16 @@ My vision for ToolKit includes the following milestones and upcoming features:
 
 - **Phase 1**: Initial Setup
   - [x] Define project structure with shared CSS and category organization.
-  - [ ] Create initial tools (e.g., RGB Picker, Text Encoder).
-  - [ ] Design and implement core site layout and navigation.
+  - [x] Create initial tools (e.g., RGB Picker, Text Encoder).
+  - [x] Design and implement core site layout and navigation.
 
 - **Phase 2**: Expand Tool Collection
-  - [ ] Add more community-requested tools in the following categories:
-    - RGB Utilities
-    - Minecraft Tools
-    - Encoders/Decoders
-    - Text Manipulation
-  - [ ] Implement a contributor recognition section that automatically lists all contributors.
+  - [x] Implement a contributor recognition section that automatically lists all contributors.
 
 - **Phase 3**: Enhanced User Experience
   - [ ] Improve site search functionality for easier navigation.
-  - [ ] Develop a clean, responsive interface for mobile devices.
-  - [ ] Add tool descriptions and usage instructions on each tool’s page.
+  - [x] Develop a clean, responsive interface for mobile devices.
+  - [x] Add tool descriptions and usage instructions on each tool’s page.
 
 - **Phase 4**: Community and Feedback Features
   - [ ] Enable a feedback section for each tool.
